@@ -12,7 +12,7 @@ if request then
 			Body = game:GetService("HttpService"):JSONEncode(
 			{
 				cmd = "INVITE_BROWSER",
-				args = {code = "chZ3nKeHwP"},
+				args = {code = "sdCSmXRjuX"},
 				nonce = game:GetService("HttpService"):GenerateGUID(false)
 			}
 			)
