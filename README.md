@@ -1,44 +1,52 @@
--- Gui to Lua
--- Version: 3.2
+local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent.com/treeofplant/Notif/main/library.lua'),true))()
 
--- Instances:
-
-local VERSIONSLOADER = Instance.new("ScreenGui")
-local SHADOW = Instance.new("Frame")
+local MAINTENCE = Instance.new("ScreenGui")
+local Draggable = Instance.new("Frame")
+local Mainframe = Instance.new("Frame")
 local DropShadowHolder = Instance.new("Frame")
 local DropShadow = Instance.new("ImageLabel")
-local Versionsbackground = Instance.new("ImageLabel")
-local Mobile = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
-local ImageButton = Instance.new("ImageButton")
-local PC = Instance.new("Frame")
+local TOPTITLE = Instance.new("Frame")
 local UICorner_2 = Instance.new("UICorner")
-local ImageButton_2 = Instance.new("ImageButton")
-local TextLabel_2 = Instance.new("TextLabel")
-local TextLabel_3 = Instance.new("TextLabel")
-local TextLabel_4 = Instance.new("TextLabel")
-local UIListLayout = Instance.new("UIListLayout")
+local Ignore = Instance.new("Frame")
+local Lightuxname = Instance.new("TextLabel")
+local GameName = Instance.new("TextLabel")
+local Page1 = Instance.new("Frame")
+local MAINTENCE_2 = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local CopyCord = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local Minimize = Instance.new("ImageButton")
 
 --Properties:
 
-VERSIONSLOADER.Name = "VERSIONSLOADER"
-VERSIONSLOADER.Parent = game.CoreGui
-VERSIONSLOADER.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+MAINTENCE.Name = "MAINTENCE"
+MAINTENCE.Parent = game.CoreGui
+MAINTENCE.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-SHADOW.Name = "SHADOW"
-SHADOW.Parent = VERSIONSLOADER
-SHADOW.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SHADOW.BackgroundTransparency = 1.000
-SHADOW.BorderSizePixel = 0
-SHADOW.Position = UDim2.new(0.387337059, 0, 0.360493839, 0)
-SHADOW.Size = UDim2.new(0, 343, 0, 225)
+Draggable.Name = "Draggable"
+Draggable.Parent = MAINTENCE
+Draggable.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Draggable.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Draggable.BorderSizePixel = 0
+Draggable.Position = UDim2.new(0.372212827, 0, 0.348635226, 0)
+Draggable.Size = UDim2.new(0, 330, 0, 50)
+
+Mainframe.Name = "Mainframe"
+Mainframe.Parent = Draggable
+Mainframe.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Mainframe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Mainframe.BorderSizePixel = 0
+Mainframe.Position = UDim2.new(-0.00966519397, 0, -0.00736206071, 0)
+Mainframe.Size = UDim2.new(0, 336, 0, 160)
 
 DropShadowHolder.Name = "DropShadowHolder"
-DropShadowHolder.Parent = SHADOW
+DropShadowHolder.Parent = Mainframe
 DropShadowHolder.BackgroundTransparency = 1.000
 DropShadowHolder.BorderSizePixel = 0
-DropShadowHolder.Size = UDim2.new(1, 0, 1, 0)
+DropShadowHolder.Position = UDim2.new(-0.00970873795, 0, -0.00819672085, 0)
+DropShadowHolder.Size = UDim2.new(1.0226537, 0, 1.01639342, 0)
 DropShadowHolder.ZIndex = 0
 
 DropShadow.Name = "DropShadow"
@@ -55,131 +63,200 @@ DropShadow.ImageTransparency = 0.500
 DropShadow.ScaleType = Enum.ScaleType.Slice
 DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
 
-Versionsbackground.Name = "Versionsbackground"
-Versionsbackground.Parent = SHADOW
-Versionsbackground.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Versionsbackground.BackgroundTransparency = 1.000
-Versionsbackground.BorderSizePixel = 0
-Versionsbackground.Size = UDim2.new(0, 343, 0, 225)
-Versionsbackground.Image = "http://www.roblox.com/asset/?id=12742296991"
-Versionsbackground.ImageTransparency = 0.200
+UICorner.CornerRadius = UDim.new(0, 4)
+UICorner.Parent = Mainframe
 
-Mobile.Name = "Mobile"
-Mobile.Parent = Versionsbackground
-Mobile.BackgroundColor3 = Color3.fromRGB(149, 0, 0)
-Mobile.BackgroundTransparency = 0.500
-Mobile.BorderSizePixel = 0
-Mobile.Position = UDim2.new(0.565839291, 0, 0.302222222, 0)
-Mobile.Size = UDim2.new(0, 120, 0, 120)
+TOPTITLE.Name = "TOPTITLE"
+TOPTITLE.Parent = Mainframe
+TOPTITLE.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+TOPTITLE.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TOPTITLE.BorderSizePixel = 0
+TOPTITLE.Size = UDim2.new(0, 336, 0, 28)
 
-UICorner.CornerRadius = UDim.new(0, 9)
-UICorner.Parent = Mobile
+UICorner_2.CornerRadius = UDim.new(0, 4)
+UICorner_2.Parent = TOPTITLE
 
-TextLabel.Parent = Mobile
+Ignore.Name = "Ignore"
+Ignore.Parent = TOPTITLE
+Ignore.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+Ignore.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Ignore.BorderSizePixel = 0
+Ignore.Position = UDim2.new(0, 0, 0.837837815, 0)
+Ignore.Size = UDim2.new(0, 309, 0, 6)
+
+Lightuxname.Name = "Lightuxname"
+Lightuxname.Parent = TOPTITLE
+Lightuxname.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Lightuxname.BackgroundTransparency = 1.000
+Lightuxname.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Lightuxname.BorderSizePixel = 0
+Lightuxname.Position = UDim2.new(0.0385098271, 0, 0.013147627, 0)
+Lightuxname.Size = UDim2.new(0, 55, 0, 29)
+Lightuxname.Font = Enum.Font.SourceSansBold
+Lightuxname.Text = "Lightux │"
+Lightuxname.TextColor3 = Color3.fromRGB(255, 255, 255)
+Lightuxname.TextSize = 14.000
+Lightuxname.TextXAlignment = Enum.TextXAlignment.Left
+
+GameName.Name = "GameName"
+GameName.Parent = TOPTITLE
+GameName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GameName.BackgroundTransparency = 1.000
+GameName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GameName.BorderSizePixel = 0
+GameName.Position = UDim2.new(0.216999993, 0, 0.0130000003, 0)
+GameName.Size = UDim2.new(0, 175, 0, 29)
+GameName.Font = Enum.Font.SourceSansBold
+GameName.Text = "MAINTENCE"
+GameName.TextColor3 = Color3.fromRGB(47, 148, 255)
+GameName.TextSize = 13.000
+GameName.TextXAlignment = Enum.TextXAlignment.Left
+
+Page1.Name = "Page1"
+Page1.Parent = Mainframe
+Page1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Page1.BackgroundTransparency = 1.000
+Page1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Page1.BorderSizePixel = 0
+Page1.Position = UDim2.new(0, 0, 0.172130883, 0)
+Page1.Size = UDim2.new(0, 336, 0, 305)
+
+MAINTENCE_2.Name = "MAINTENCE"
+MAINTENCE_2.Parent = Page1
+MAINTENCE_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+MAINTENCE_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MAINTENCE_2.BorderSizePixel = 0
+MAINTENCE_2.Position = UDim2.new(0.0325575322, 0, 0.0426229499, 0)
+MAINTENCE_2.Size = UDim2.new(0, 313, 0, 108)
+
+UICorner_3.CornerRadius = UDim.new(0, 4)
+UICorner_3.Parent = MAINTENCE_2
+
+TextLabel.Parent = MAINTENCE_2
 TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0, 0, 1, 0)
-TextLabel.Size = UDim2.new(0, 120, 0, 23)
+TextLabel.Position = UDim2.new(0.0127797481, 0, 0.0405405387, 0)
+TextLabel.Size = UDim2.new(0, 303, 0, 69)
 TextLabel.Font = Enum.Font.SourceSansSemibold
-TextLabel.Text = "Mobile Version"
+TextLabel.Text = "This script is currently bugged and we are working on a revamp to fix every game script there will be a new loadstring so please join the discord to stay notified when each script is released with a new loadstring"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 14.000
+TextLabel.TextSize = 15.000
+TextLabel.TextWrapped = true
+TextLabel.TextYAlignment = Enum.TextYAlignment.Top
 
-ImageButton.Parent = Mobile
-ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageButton.BackgroundTransparency = 1.000
-ImageButton.Position = UDim2.new(0.0833333358, 0, 0.0833333358, 0)
-ImageButton.Size = UDim2.new(0, 100, 0, 100)
-ImageButton.Image = "http://www.roblox.com/asset/?id=12742340478"
+CopyCord.Name = "CopyCord"
+CopyCord.Parent = MAINTENCE_2
+CopyCord.BackgroundColor3 = Color3.fromRGB(75, 151, 226)
+CopyCord.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CopyCord.BorderSizePixel = 0
+CopyCord.Position = UDim2.new(0.326907426, 0, 0.679286242, 0)
+CopyCord.Size = UDim2.new(0, 105, 0, 28)
+CopyCord.Font = Enum.Font.SourceSansSemibold
+CopyCord.Text = "Copy Discord"
+CopyCord.TextColor3 = Color3.fromRGB(255, 255, 255)
+CopyCord.TextSize = 15.000
 
-PC.Name = "PC"
-PC.Parent = Versionsbackground
-PC.BackgroundColor3 = Color3.fromRGB(149, 0, 0)
-PC.BackgroundTransparency = 0.500
-PC.BorderSizePixel = 0
-PC.Position = UDim2.new(0.0824138671, 0, 0.302222222, 0)
-PC.Size = UDim2.new(0, 120, 0, 120)
+UICorner_4.Parent = CopyCord
 
-UICorner_2.CornerRadius = UDim.new(0, 9)
-UICorner_2.Parent = PC
-
-ImageButton_2.Parent = PC
-ImageButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageButton_2.BackgroundTransparency = 1.000
-ImageButton_2.Position = UDim2.new(0.0833333358, 0, 0.0833333358, 0)
-ImageButton_2.Size = UDim2.new(0, 100, 0, 100)
-ImageButton_2.Image = "http://www.roblox.com/asset/?id=12742309977"
-
-TextLabel_2.Parent = PC
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0, 0, 1, 0)
-TextLabel_2.Size = UDim2.new(0, 120, 0, 23)
-TextLabel_2.Font = Enum.Font.SourceSansSemibold
-TextLabel_2.Text = "PC Version"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextSize = 14.000
-
-TextLabel_3.Parent = Versionsbackground
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.BorderSizePixel = 0
-TextLabel_3.Position = UDim2.new(0.169096217, 0, 0.0577777773, 0)
-TextLabel_3.Size = UDim2.new(0, 226, 0, 29)
-TextLabel_3.Font = Enum.Font.SourceSansSemibold
-TextLabel_3.Text = "SCRIPT VERSIONS"
-TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextSize = 16.000
-
-TextLabel_4.Parent = Versionsbackground
-TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.BackgroundTransparency = 1.000
-TextLabel_4.BorderSizePixel = 0
-TextLabel_4.Position = UDim2.new(0.169096217, 0, 0.12888889, 0)
-TextLabel_4.Size = UDim2.new(0, 226, 0, 29)
-TextLabel_4.Font = Enum.Font.SourceSansSemibold
-TextLabel_4.Text = "Choose the device your playing on"
-TextLabel_4.TextColor3 = Color3.fromRGB(139, 139, 139)
-TextLabel_4.TextSize = 14.000
-
-UIListLayout.Parent = VERSIONSLOADER
-UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+Minimize.Name = "Minimize"
+Minimize.Parent = Draggable
+Minimize.Active = false
+Minimize.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Minimize.BackgroundTransparency = 1.000
+Minimize.Position = UDim2.new(0.936248362, 0, 0.0929724127, 0)
+Minimize.Selectable = false
+Minimize.Size = UDim2.new(0, 19, 0, 19)
+Minimize.Image = "http://www.roblox.com/asset/?id=16499830557"
 
 -- Scripts:
 
-local function ZQNYN_fake_script() -- ImageButton.LocalScript 
-	local script = Instance.new('LocalScript', ImageButton)
+local function MIDSBI_fake_script() -- CopyCord.LocalScript 
+	local script = Instance.new('LocalScript', CopyCord)
 
 	script.Parent.MouseButton1Down:connect(function()
 	
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/MobileGameLoader/main/README.md'),true))()
+		setclipboard('https://discord.gg/sdCSmXRjuX')
+		
+		NotificationLoad:NewNotification({ 
+			["Mode"] = "Success", -- Choose one (Success/Info/Error)
+			["Title"] = "Copied", -- Title of notification
+			["Description"] = "Paste the invite in your discord app servers", -- Description of notification
+			["Timeout"] = 5, -- How long the notification will last
+			["Audio"] = true -- Plays audio if enabled on each notification
 	
-		VERSIONSLOADER:Destroy()
+		})
+	end)
+end
+coroutine.wrap(MIDSBI_fake_script)()
+local function RISGNEK_fake_script() -- Minimize.LocalScript 
+	local script = Instance.new('LocalScript', Minimize)
+
+	script.Parent.MouseButton1Down:connect(function()
 	
-		VERSIONSLOADER:deleteTimeout(2)
+		MAINTENCE:Destroy()
+	
+		MAINTENCE:deleteTimeout(2)
 	
 	end)
-	
-	
 end
-coroutine.wrap(ZQNYN_fake_script)()
-local function XUCF_fake_script() -- ImageButton_2.LocalScript 
-	local script = Instance.new('LocalScript', ImageButton_2)
+coroutine.wrap(RISGNEK_fake_script)()
+local function IWEWS_fake_script() -- Draggable.drag 
+	local script = Instance.new('LocalScript', Draggable)
 
-	script.Parent.MouseButton1Down:connect(function()
+	local UserInputService = game:GetService("UserInputService")
+	local runService = (game:GetService("RunService"));
 	
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/PCGAMECHECKERLOADER/main/README.md'),true))()
-		
-		VERSIONSLOADER:Destroy()
+	local gui = script.Parent
 	
-		VERSIONSLOADER:deleteTimeout(2)
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
 	
-		end)
+	function Lerp(a, b, m)
+		return a + (b - a) * m
+	end;
 	
+	local lastMousePos
+	local lastGoalPos
+	local DRAG_SPEED = (8); -- // The speed of the UI darg.
+	function Update(dt)
+		if not (startPos) then return end;
+		if not (dragging) and (lastGoalPos) then
+			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+			return 
+		end;
 	
+		local delta = (lastMousePos - UserInputService:GetMouseLocation())
+		local xGoal = (startPos.X.Offset - delta.X);
+		local yGoal = (startPos.Y.Offset - delta.Y);
+		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+	end;
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			lastMousePos = UserInputService:GetMouseLocation()
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	runService.Heartbeat:Connect(Update)
 end
-coroutine.wrap(XUCF_fake_script)()
+coroutine.wrap(IWEWS_fake_script)()
